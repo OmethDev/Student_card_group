@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile Card</title>
+    
+    <!-- CSS BLOCK: Styling for the layout, typography, and visual effects -->
+    <style>
+        :root {
+            /* Design System Variables - Vibrant Dark Mode */
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+            --border-radius: 20px;
+            --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            --text-color: #f8fafc;
+            --muted-color: #94a3b8;
+            --accent-color: #6366f1; /* Vibrant Indigo */
+            --accent-hover: #4f46e5;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(circle at 0% 0%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 100% 100%, rgba(168, 85, 247, 0.15) 0%, transparent 50%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: var(--text-color);
+        }
+
+        /* MAIN SECTION: Container for the profile card */
+        .profile-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .student-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--card-shadow);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            
+            width: 100%;
+            max-width: 380px;
+            padding: 50px 30px;
+            text-align: center;
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .student-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .profile-initials {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent-color), #a855f7);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3rem;
+            font-weight: 800;
+            margin: 0 auto 25px;
+            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+            text-transform: uppercase;
+            border: 4px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .name {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--text-color);
+            margin-bottom: 8px;
+            letter-spacing: -0.025em;
+        }
+
+        .stream {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #818cf8;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 25px;
+        }
+
+        .bio {
+            font-size: 1rem;
+            color: var(--muted-color);
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .action-btn {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            width: 100%;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+        }
+
+        .action-btn:hover {
+            background-color: var(--accent-hover);
+            transform: scale(1.02);
+            box-shadow: 0 6px 15px rgba(99, 102, 241, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- MAIN SECTION: Structural wrapper -->
+    <main class="profile-container">
+        
+        <!-- HTML STRUCTURE: Semantic <article> for the student profile -->
+        <article class="student-card">
+            
+            <header>
+                <!-- DATA MODEL: Profile Initials Placeholder -->
+                <div class="profile-initials">JD</div>
+                
+                <!-- DATA MODEL: Name -->
+                <h1 class="name">John Doe</h1>
+                
+                <!-- DATA MODEL: Stream -->
+                <p class="stream">Information Technology</p>
+            </header>
+
+            <!-- HTML STRUCTURE: Semantic <section> for the biography -->
+            <section>
+                <!-- DATA MODEL: Short Bio -->
+                <p class="bio">
+                    Passionately curious developer specializing in cloud architecture and modern web technologies. Dedicated to creating efficient, scalable, and user-friendly digital solutions.
+                </p>
+            </section>
+
+            <footer>
+                <button class="action-btn">Contact Student</button>
+            </footer>
+
+        </article>
+
+    </main>
+
+</body>
+</html>
